@@ -22,7 +22,7 @@ src/main/java/org/example/
 
 `Person` y `Address` son clases generadas con Lombok (`@Value`) que utilizan el patron Builder (`@Builder`) para su construccion. `Person` contiene campos obligatorios (`firstName`, `lastName`) y opcionales (`age`, `address`).
 
-### Patron Strategy
+### Estrategias
 
 La interfaz `PersonFormatter` define un unico metodo `format(Person)` que retorna un `String`. Cada implementacion encapsula una estrategia de formateo distinta:
 
@@ -54,9 +54,3 @@ java -cp build/classes/java/main org.example.PersonFormatterCli csv true
 
 Se incluyen tests unitarios para `PrettyStringFormatter` y `CsvFormatter` cubriendo todos los campos, campos nulos, direcciones parciales y la opcion de cabecera CSV.
 
-## Tecnologias
-
-- Java 17+
-- Gradle
-- Lombok (`@Value`, `@Builder`)
-- JUnit 5
